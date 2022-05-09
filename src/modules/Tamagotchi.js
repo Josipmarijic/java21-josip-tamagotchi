@@ -7,6 +7,7 @@ export class Tamagotchi{
     #happinesID;
     #img;
     
+    
 
 
 constructor(tName, type) {
@@ -36,10 +37,15 @@ gettingHungry(){
     this.#hunger++;
     document.getElementById("food").innerText = "Jag är Hungrig :(";
     console.log('hunger in class', this.#hunger);
+    document.getElementById('hunger').innerText = `om siffran når tio dör jag ${this.#hunger}`;
+
+    
     }
     else 
         document.getElementById("food").innerText = "jag är mätt :)";
         this.#hunger++;
+        document.getElementById('hunger').innerText = `om siffran når tio dör jag ${this.#hunger}`;
+
     
 }
 
@@ -57,9 +63,12 @@ gettingSad(){
     }else if (this.#happines <= 6){
         document.getElementById("playWithMe").innerText = "Lek med mig :("
         this.#happines = this.#happines - 1;
+        document.getElementById('happines').innerText = `om siffran når noll dör jag ${this.#happines}`;
     console.log('happiness in class', this.#happines);
     }else document.getElementById("playWithMe").innerText = "Jag är glad :)";
     this.#happines = this.#happines - 1;
+    document.getElementById('happines').innerText = `om siffran når noll dör jag ${this.#happines}`;
+
     
 }
 
